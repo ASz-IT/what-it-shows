@@ -4,7 +4,7 @@ title: '#4471 is two problems'
 owner: Arkadiusz Szczeciński
 status: open
 reviewed: 2026-10-28
-signature: Arkadiusz Szczeciński
+signature: "v1.eyJzdWIiOiI0MzUxIiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMxODM2ODAsImV4cCI6MTc5MzI3MDA4MH0.LbJyq4kAY_HnhKBsBrTrcm0MQIKdxI_mMFtKze7L8K0"
 ---
 
 <script>
