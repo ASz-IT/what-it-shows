@@ -1,0 +1,1 @@
+export{n as component}from"../chunks/CXvG5v3R.js";

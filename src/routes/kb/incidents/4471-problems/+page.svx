@@ -1,0 +1,26 @@
+---
+layout: runbook
+title: '#4471 is two problems'
+owner: Arkadiusz Szczeciński
+status: open
+reviewed: 2026-10-28
+signature: Arkadiusz Szczeciński
+---
+
+<script>
+  import Callout from '#lib/kb/Callout.svelte';
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+#4471 merged every date report into one known issue. The cause table does not agree. A day-first tenant hits `parser` when the shared parser reads the date month first. A report that came in on booking-v3's form is `hint`: that form prints a month-first hint, and the form then reads the field the tenant's way. Those are different bugs. The hint reports sit on this ticket with no ticket of their own.
+
+<Callout kind="warn">
+One desk ticket is not one problem. File one ticket per cause. Take the count from the table, not from the merged total.
+</Callout>
+
+## Causes in #4471
+
+<CauseTable ticket={4471} />
+
+<RenderStamp {signature} />
