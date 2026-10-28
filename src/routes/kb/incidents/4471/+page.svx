@@ -15,11 +15,11 @@ reviewed: 2026-09-30
 Since April, people have told us their bookings land on the wrong day: a month flipped. By
 4 October the desk had **412 reports**.
 
-**Merged as one issue.** The parser reads dates month first, and our tenants write the day
-first. The fix is queued.
+**Merged as one issue.** The parser read dates month first, and our tenants write the day
+first. The parser now follows the locale. Reports from booking-v3's form are a different bug.
 
 <Callout>
-Known. One issue, one fix queued.
+The parser fix reads a day-first locale day first. Hint stays its own ticket.
 </Callout>
 
 ## What was merged

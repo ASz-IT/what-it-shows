@@ -34,9 +34,11 @@ export function dayFirst(locale: string): boolean {
   return order.indexOf('day') < order.indexOf('month');
 }
 
-// The shared parser reads every date month first. A day-first tenant's dates come out flipped:
-// that is `parser`. Through booking-v3's form the tenant's people type what the hint tells them,
-// month first, and the form reads it the tenant's way: that is `hint`, a different bug.
+// Reports already filed: the shared parser read every date month first. A day-first tenant's
+// dates came out flipped: that is `parser`. The fix is `parseNumericDate` (date-parser.ts).
+// This function still classifies those reports. Through booking-v3's form the tenant's people
+// type what the hint tells them, month first, and the form reads it the tenant's way: that is
+// `hint`, a different bug. The parser fix does not cover it.
 export function causeOf(r: Pick<Report, 'channel'>, t: Tenant | undefined): Cause | null {
   if (!t || !dayFirst(t.locale)) return null;
   return r.channel === 'form' && DATE_HINT[t.form].startsWith('MM') ? 'hint' : 'parser';

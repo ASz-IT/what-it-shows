@@ -10,10 +10,15 @@ signature: "v1.eyJzdWIiOiI0MzUxIiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpY
 <script>
   import Callout from '#lib/kb/Callout.svelte';
   import CauseTable from '#lib/kb/CauseTable.svelte';
+  import ParserFix from '#lib/kb/ParserFix.svelte';
   import RenderStamp from '#lib/kb/RenderStamp.svelte';
 </script>
 
 #4471 merged every date report into one known issue. The cause table does not agree. A day-first tenant hits `parser` when the shared parser reads the date month first. A report that came in on booking-v3's form is `hint`: that form prints a month-first hint, and the form then reads the field the tenant's way. Those are different bugs. The hint reports moved off this ticket onto a ticket of their own.
+
+<ParserFix />
+
+The parser fix reads a day-first locale day first. It does not cover `hint`. Different causes stay apart.
 
 <Callout kind="warn">
 One desk ticket is not one problem. File one ticket per cause. Take the count from the table, not from the merged total.
